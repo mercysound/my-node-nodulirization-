@@ -1,11 +1,15 @@
 const express = require("express");
 const router = express.Router();
 const studentModel = require("../models/student_model");
-const studentController = require("../controller/student_controler")
-router.get("/signup", studentController.getStudentSignUp);
-router.get("/login", studentController.getStudentLogin);
 
 router.get("/", studentController.getStudentDashboard);
+
+const studentController = require("../controller/student_controler");
+
+router.get("/signup", studentController.getStudentSignUp);
+
+router.get("/login", studentController.getStudentLogin);
+
 
 router.post("/signup", (req, res)=>{
   console.log(req.body);
